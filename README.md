@@ -1,11 +1,11 @@
-
-
 # Battlship 1v1 Online TCP-IP
 It is a battleship game that works over tcp-ip in the local network.
 ### How do play
 - Run and compile the project
+- ![image](https://i.imgur.com/6oJtLfn.png)
 - In the window that opens, enter your name and say create
 - Then enter your game partner, game ip and name and click connect.
+- ![image](https://i.imgur.com/VwBaz9Y.png)
 - When both sides say ready, the host player can start the game by saying "Start".
 - Have fun
 
