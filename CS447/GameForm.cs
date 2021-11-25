@@ -62,9 +62,12 @@ namespace CS447
                 client.Events.DataReceived += Events_DataClient;
                 client.Events.Connected += Events_Connected;
                 client.Connect();
+
                 buttonReady.Location = new Point(1283, 12);
                 buttonStartGame.Visible = false;
             }
+
+
             MY();
             DESTROY();
 
@@ -240,10 +243,7 @@ namespace CS447
                 scoreLabel.Text = String.Format("{0}:{1}", scoreServer, scoreClient);
                 if (scoreClient == 14)
                 {
-                    this.Hide();
-                    WinnerDialog winnerDialog = new WinnerDialog(enemyName);
-                    winnerDialog.ShowDialog();
-                    this.Close();
+                    MessageBox.Show(enemyName);
                 }
             } 
             else if (result.Contains("loc"))
@@ -291,10 +291,7 @@ namespace CS447
                 scoreLabel.Text = String.Format("{0}:{1}", scoreServer, scoreClient);
                 if (scoreServer == 14)
                 {
-                    this.Hide();
-                    WinnerDialog winnerDialog = new WinnerDialog(enemyName);
-                    winnerDialog.ShowDialog();
-                    this.Close();
+                    MessageBox.Show(enemyName);
                 }
             }
             else if (result.Contains("loc"))
@@ -316,7 +313,6 @@ namespace CS447
                 if (CLIENT_ID != "")
                     server.Send(CLIENT_ID, "NAME " + name);
             }
-
         }
 
         private void Event_ClientDisconnected(object sender, ClientDisconnectedEventArgs e)
@@ -485,10 +481,7 @@ namespace CS447
                         }
                         server.Send(CLIENT_ID, String.Format("attack {0} clnt {1}", index, score));
                         if (isShot && (scoreServer + 1) == 14) {
-                            this.Hide();
-                            WinnerDialog winnerDialog = new WinnerDialog(name);
-                            winnerDialog.ShowDialog();
-                            this.Close();
+                            MessageBox.Show(name);
                         }
                     }      
                 }
@@ -502,10 +495,7 @@ namespace CS447
                 }
                 client.Send(String.Format("attack {0} srvr {1}", index, score));
                 if (isShot && (scoreClient + 1) == 14) {
-                    this.Hide();
-                    WinnerDialog winnerDialog = new WinnerDialog(name);
-                    winnerDialog.ShowDialog();
-                    this.Close();
+                    MessageBox.Show(name);
                 }
             }
 

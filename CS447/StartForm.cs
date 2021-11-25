@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CS447
@@ -19,14 +11,13 @@ namespace CS447
         }
 
         // CREATE
-
         private void button1_Click(object sender, EventArgs e)
         {
             string name = textBox1.Text;
             if (!name.Equals(""))
             {
                 this.Hide();
-                GameForm gameForm = new GameForm(name, "srvr", "127.0.0.1");           
+                GameForm gameForm = new GameForm(name, "srvr", "");           
                 gameForm.ShowDialog();
                 this.Close();
             }
